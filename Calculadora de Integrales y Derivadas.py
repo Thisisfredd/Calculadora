@@ -2,8 +2,13 @@ from sympy import integrate, init_printing, diff
 import numpy as np
 from sympy.abc import *
 import os
+import requests, sys, signal
 init_printing(use_latex="mathjax")
  
+ def sig_handler(sig, frame):
+         print("\n\n[!] Saliendo... \n")
+         sys.exit(0)
+signal.signal(signal.SIGINT, sig_handler)
 
 while(True):
     def Integrar_Funcion():
